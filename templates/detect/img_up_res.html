@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br>
+<div class="container">
+	<form action="{% url 'detect' %}" enctype="multipart/form-data" method="POST">
+	  {% csrf_token %}
+	  <h4>Image :  </h4>
+	  <input type="file" name="images" accept="image/*">
+	  <br>
+	  <br>
+	  <input class="btn btn-dark" type="submit" value="전송">
+  </form>
+</div>
+
+{% endblock %}
